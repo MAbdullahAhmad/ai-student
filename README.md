@@ -2,6 +2,6 @@
 
 1 month AI challenge.
 
-## Topics
+## To-Do List
 
-- [x] test
+@pending-write
