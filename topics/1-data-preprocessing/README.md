@@ -8,14 +8,14 @@ Sure! Here's a nested list of topics you should study for Data Pre-Processing in
 
 ## Data Pre-Processing
 
-1. - [ ] **Data Cleaning**
+1. - [x] **Data Cleaning**
    - [x] Handling Missing Data
      - [x] Methods to Handle Missing Data (e.g., mean/mode/median imputation, removal)
    - [x] Handling Outliers
      - [x] Detection of Outliers (e.g., Z-score, IQR)
      - [x] Treatment of Outliers (e.g., removal, transformation)
-   - [ ] Handling Duplicates
-     - [ ] Identifying and Removing Duplicates
+   - [x] Handling Duplicates
+     - [x] Identifying and Removing Duplicates
 
 2. - [ ] **Data Transformation**
    - [ ] Normalization
