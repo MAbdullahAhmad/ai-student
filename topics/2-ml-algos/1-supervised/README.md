@@ -1,7 +1,7 @@
 # Supervised Learning Algorithms
 
 ## Regression
-1. - [ ] **Linear Regression (LR)**
+1. - [x] **Linear Regression (LR)**
 2. - [ ] **Ridge Regression (RR)**
 3. - [ ] **Lasso Regression (LR)**
 4. - [ ] **Polynomial Regression (PR)**
