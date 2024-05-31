@@ -94,3 +94,18 @@
    - LSTM for Time Series
 
 This list encompasses a broad range of algorithms commonly used in machine learning, each suited to different types of tasks and datasets.
+
+## Functions
+
+### Error Metrics
+
+1. - [x] **Mean Absolute Error (MAE)**
+2. - [x] **Mean Squared Error (MSE)**
+3. - [x] **Root Mean Squared Error (RMSE)**
+4. - [x] **Mean Absolute Percentage Error (MAPE)**
+
+### Evaluation Scores
+
+1. - [x] **R-squared Score (R²)**
+2. - [x] **Adjusted R-squared Score**
+
