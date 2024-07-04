@@ -1,0 +1,1 @@
+- [Generic Algorithm](http://outlace.com/miniga_addendum.html)
