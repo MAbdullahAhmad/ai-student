@@ -1,1 +1,2 @@
 - [Generic Algorithm](http://outlace.com/miniga_addendum.html)
+- [Github Algos](https://github.com/jakevdp/PythonDataScienceHandbook/tree/master/notebooks) (LR, PR)
