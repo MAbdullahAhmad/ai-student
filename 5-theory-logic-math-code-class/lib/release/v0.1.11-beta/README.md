@@ -1,4 +1,4 @@
-## Lib `v0.1.11-beta`
+## Lib `v1.1.11-beta`
 
 Under Development + Testing Library for Machine Learning.
 

@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 
 class Optimizer(ABC):
   """
-  Loss class
+  Optimizer class
 
   Required Methods:
   - update

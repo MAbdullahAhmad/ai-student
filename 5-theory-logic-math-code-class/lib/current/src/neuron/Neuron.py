@@ -205,11 +205,16 @@ class Neuron(Neuron):
   # Backward Pass (loss & optimize)
   #
 
-  def backward(self, error=None):
+  def backward(self, error=None, learning_rate:Number=None):
     self.error = error or self.error
+    lr = learning_rate or self.learning_rate
 
     # gradient
     self.delta = self.error * self.activation.derivative(self.output)
+
+    # updation
+    self.weights -= lr * self.delta * self.input
+    self.bias -= learning_rate * self.delta
 
     # return loss for previous neurons
     return np.dot(self.delta, self.weights)
