@@ -19,3 +19,8 @@ class CategoricalCrossentropy(Loss):
   def calculate(self, y_true, y_pred):
     y_pred = np.clip(y_pred, self.epilon, 1-self.epilon)
     return -np.sum(y_true * np.log(y_pred)) / y_true.shape[0]
+  
+
+  def derivative(self, y_true, y_pred):
+    y_pred = np.clip(y_pred, self.epsilon, 1 - self.epsilon)
+    return - y_true / y_pred

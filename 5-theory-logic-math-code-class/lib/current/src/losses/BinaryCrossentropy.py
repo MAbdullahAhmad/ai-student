@@ -37,3 +37,7 @@ class BinaryCrossentropy(Loss):
     return -(
       np.mean(tmp) if self.reduction == 'mean' else np.sum(tmp)
     )
+  
+  def derivative(self, y_true, y_pred):
+    y_pred = np.clip(y_pred, self.epsilon, 1 - self.epsilon)
+    return - (y_true / y_pred) + (1 - y_true) / (1 - y_pred)
