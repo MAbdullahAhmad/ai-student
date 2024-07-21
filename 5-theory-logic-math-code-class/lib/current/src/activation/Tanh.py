@@ -6,7 +6,7 @@ from ..core.Activation import Activation
 # Tanh activation
 #
 
-class Tanh():
+class Tanh(Activation):
 
   def apply(self, x):
     return np.tanh(x)
