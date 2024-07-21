@@ -1,16 +1,15 @@
+from ..core.Optimizer import Optimizer
+
 #
 # Stochastic Gradient Descent
 #
 
-class StochasticGradientDescent():
-  MODES = {
-    'SAMPLE': 1,
-    'BATCH': 2,
-  }
+class StochasticGradientDescent(Optimizer):
 
   def __init__(self, learning_rate=None):
     self.learning_rate = learning_rate
     self.mode = self.MODES['SAMPLE']
+
 
   def update(self, model, learning_rate=0.01):
     # learning rate
