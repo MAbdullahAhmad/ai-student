@@ -13,27 +13,30 @@ class Neuron(ABC):
   - loss_method
 
   Required Methods:
-  - train
-  - predict
-  - test
-  - forward (returns predicted and error)
-  - backward (returns updated weights)
+  - forward (returns predicted output)
+  - backward (returns loss gradient for previous neurons)
   
   Optional Methods
   - activation
   - optimize
   - calculate_loss
+  - train
+  - test
+
+  Depricated Methods:
+  - predict
+
   """
 
 
-  @abstractmethod
-  def train(self, *args, **kwargs): pass
+  # @abstractmethod
+  # def train(self, *args, **kwargs): pass
 
-  @abstractmethod
-  def predict(self, x): pass
+  # @abstractmethod
+  # def predict(self, x): pass
 
-  @abstractmethod
-  def test(self, *args, **kwargs): pass
+  # @abstractmethod
+  # def test(self, *args, **kwargs): pass
 
   @abstractmethod
   def forward(self, x, y): pass
