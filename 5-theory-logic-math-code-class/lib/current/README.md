@@ -6,16 +6,19 @@ Under Development Library for Machine Learning.
 
 Core:
 
-- `cosre`: abstract classes / interfaces
+- `src/core`: abstract classes / interfaces
 
 Reusables: 
-- `activation`
-- `errors`
-- `optimizers`
+- `src/activation`
+- `src/errors`
+- `src/optimizers`
 
 Model Building:
 
-- `neuron`
+- `src/neuron`:
+  - `SimpleNeuron`: 
 
 ## Examples
 
+- `neuron`:
+  - [`SimpleNeuron`](examples/neuron/simple_neuron.ipynb)
