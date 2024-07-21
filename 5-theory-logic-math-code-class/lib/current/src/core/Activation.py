@@ -14,5 +14,5 @@ class Activation(ABC):
   def apply(self, x): pass
 
   @abstractmethod
-  def apply_derivative(self, x): pass
+  def derivative(self, x): pass
   
