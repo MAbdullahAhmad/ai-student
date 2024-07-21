@@ -41,8 +41,8 @@ class SimpleNeuron(Neuron):
   def activation(self, x:Iterable, threshold:float=0.2):
     return 1 if x > threshold else 0
   
-  # predict
-  def predict(self, x:Iterable):
+  # forward pass
+  def forward(self, x:Iterable):
     x = np.array(x)
 
     if len(x.shape) and x.shape[0] == self.input_size:
@@ -55,13 +55,11 @@ class SimpleNeuron(Neuron):
       # return
       return predicted
     
-    elif len(x.shape) > 1 and x.shape[1] == self.input_size:
-      return self.predict_multiple(x)
-    else: raise UnexpectedInputsShape(f'Inputs shape must be ({self.input_size}). found {x.shape}')
+    return self.forward_multiple(x)
   
 
-  # predict multiple
-  def predict_multiple(self, inputs:Iterable):
+  # forward multiple
+  def forward_multiple(self, inputs:Iterable):
     inputs = np.array(inputs)
     input_shape = inputs.shape
 
@@ -70,28 +68,32 @@ class SimpleNeuron(Neuron):
 
     results = []
     for i in range(input_shape[0]):
-      results.append(inputs[i])
+      results.append(
+        self.forward(
+          inputs[i]
+        )
+      )
 
     return np.array(results)
 
 
 
-  def forward(self, x:Iterable, y:Number):
-    # predicted
-    predicted = self.predict(x)
+  # def forward(self, x:Iterable, y:Number):
+  #   # predicted
+  #   predicted = self.predict(x)
 
-    # error
-    error = y - predicted
+  #   # error
+  #   error = y - predicted
 
-    return predicted, error
+  #   return predicted, error
 
 
 
   def backward(self, error:Number, x:Iterable):
     # update weights
     return (
-      self.weights + self.learning_rate * error * x,
-      self.bias + self.learning_rate * error
+      self.weights - self.learning_rate * error * x,
+      self.bias - self.learning_rate * error
     )
 
 
@@ -112,14 +114,24 @@ class SimpleNeuron(Neuron):
       avg_err = 0
       
       for i in range(input_shape[0]):
-        predicted, error = self.forward(inputs[i], outputs[i])
+        # Forward
+        predicted = self.forward(inputs[i])
+
+        # Error
+        error = predicted - outputs[i]
+
+        # Backpropagation
         self.weights, self.bias = self.backward(error, inputs[i])
+        
+        # Verbose Logs
         if verbose > 1: print(f'epoch={e+1}, sample={i+1}, error={error}')
         avg_err+=error
 
+      # Mean Absolute Error
       avg_err /= input_shape[0]
       avg_err = round(avg_err, 2)
       
+      # Verbose Logs
       if verbose: print(f'epoch={e+1}, error-avg={avg_err}')
 
 
@@ -139,7 +151,8 @@ class SimpleNeuron(Neuron):
     accurate = 0
     wrong    = 0
     for i in range(input_shape[0]):
-      predicted, error = self.forward(inputs[i], outputs[i])
+      predicted = self.forward(inputs[i])
+      error = predicted - outputs[i]
 
       if predicted == outputs[i]: accurate+=1
       else:                       wrong+=1
