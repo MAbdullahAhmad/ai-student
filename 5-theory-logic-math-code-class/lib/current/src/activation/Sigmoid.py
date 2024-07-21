@@ -11,6 +11,6 @@ class Sigmoid(Activation):
   def apply(self, x):
     return 1 / (1 + np.exp(-x))
   
-  def apply_derivative(self, x):
+  def derivative(self, x):
     sig = self.apply(x)
     return sig * (1 - sig)
