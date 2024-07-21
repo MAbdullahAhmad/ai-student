@@ -3,4 +3,4 @@
 *Note*:
 > Using [`/lib`](../lib) for making classes
 
-> This directory will be removed.
+> This directory may be removed.
