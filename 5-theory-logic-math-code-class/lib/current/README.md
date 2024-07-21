@@ -1,4 +1,4 @@
-## Lib `v0.1.4-alpha`
+## Lib `v0.1.9-alpha`
 
 Under Development Library for Machine Learning.
 
@@ -10,7 +10,15 @@ Core:
 
 Reusables: 
 - `src/activation`
-- `src/errors`
+  - `ReLu`: 
+  - `Sigmoid`: 
+  - `Tanh`: 
+- `src/losses`
+  - `MeanSquaredError`: 
+  - `MeanAbsoluteError`: 
+  - `BinaryCrossentropy`: 
+  - `CategoricalCrossentropy`: 
+  - `Hinge`: 
 - `src/optimizers`
 
 Model Building:
