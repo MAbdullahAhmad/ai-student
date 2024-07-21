@@ -41,7 +41,7 @@ class SimpleNeuron(Neuron):
   def activation(self, x:Iterable, threshold:float=0.2):
     return 1 if x > threshold else 0
   
-  # forward
+  # predict
   def predict(self, x:Iterable):
     x = np.array(x)
 
@@ -60,7 +60,7 @@ class SimpleNeuron(Neuron):
     else: raise UnexpectedInputsShape(f'Inputs shape must be ({self.input_size}). found {x.shape}')
   
 
-
+  # predict multiple
   def predict_multiple(self, inputs:Iterable):
     inputs = np.array(inputs)
     input_shape = inputs.shape
