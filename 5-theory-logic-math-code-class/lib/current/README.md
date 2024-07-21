@@ -1,4 +1,4 @@
-## Lib `v0.1.1-alpha`
+## Lib `v0.1.4-alpha`
 
 Under Development Library for Machine Learning.
 
