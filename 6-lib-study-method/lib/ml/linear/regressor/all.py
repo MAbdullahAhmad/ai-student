@@ -1,2 +1,2 @@
 from .SimpleLinearRegressor import SimpleLinearRegressor
-from .LinearRegressor import LinearRegressor
+from .LinearRegressor       import LinearRegressor
