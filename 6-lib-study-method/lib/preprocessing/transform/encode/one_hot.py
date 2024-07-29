@@ -11,7 +11,7 @@ def one_hot(data, target, return_as='list'):
 
   
   if isinstance(data, pd.DataFrame):
-    encoded = pd.get_dummies(data, columns=target if isinstance(target, Callable) else ([target] if target is not None else target))
+    encoded = pd.get_dummies(data, columns=target if isinstance(target, Iterable) else ([target] if target is not None else target))
     if return_as == 'list': return encoded.values.tolist()
     elif return_as == 'np': return encoded.values
     elif return_as == 'pd': return encoded
