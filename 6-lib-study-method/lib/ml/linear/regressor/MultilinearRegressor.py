@@ -6,7 +6,7 @@ from ....core.interfaces.Model import Model
 from ....core.functions.mean import simple_mean as mean
 
 
-class LinearRegressor(Model):
+class MultilinearRegressor(Model):
   """
   MultilinearRegressor
 
