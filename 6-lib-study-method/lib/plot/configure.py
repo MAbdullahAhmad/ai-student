@@ -33,13 +33,13 @@ def get_graph(p=None):
 
 
 
-def configure_graph(p=None, styles=None, size=(10, 10), grid=True, center_zero=True):
+def configure_graph(p=None, styles=None, size=(10, 10), grid=True, center_zero=True, equal_axis=True):
   global graph_settings
 
   if styles      is not None:  graph_settings["styles"     ] = styles
   if size        is not None:  graph_settings["size"       ] = size
   if grid        is not None:  graph_settings["grid"       ] = grid
   if center_zero is not None:  graph_settings["center_zero"] = center_zero
-  if center_zero is not None:  graph_settings["equal_axis" ] = center_zero
+  if equal_axis  is not None:  graph_settings["equal_axis" ] = equal_axis
   
   return get_graph(p)
